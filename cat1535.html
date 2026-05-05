@@ -1118,7 +1118,8 @@
           </p>
           <div class="hero-ctas">
             <a
-              href="https://wa.me/6281200000000?text=Halo,saya%20tertarik%20unit%20Studio%20SGC%20600jtan"
+              href="https://wa.me/628119950205?text=Halo,saya%20tertarik%20unit%20Studio%20SGC%20600jtan"
+              target="_blank"
               class="btn btn-wa"
               ><i class="fa-brands fa-whatsapp"></i> Klaim Slot 1 dari 5</a
             >
@@ -1174,7 +1175,8 @@
           </div>
         </div>
         <a
-          href="https://wa.me/6281200000000"
+          href="https://wa.me/628119950205?text=Halo,saya%20tertarik%20unit%20Studio%20SGC%20600jtan"
+          target="_blank"
           class="btn btn-wa"
           style="padding: 14px 24px; font-size: 15px"
           ><i class="fa-brands fa-whatsapp"></i> Hubungi Sekarang</a
@@ -1778,7 +1780,8 @@
         </p>
         <div class="ctas">
           <a
-            href="https://wa.me/6281200000000?text=Halo,saya%20mau%20klaim%20slot%20Studio%20SGC%20600jtan"
+            href="https://wa.me/628119950205?text=Halo,saya%20tertarik%20unit%20Studio%20SGC%20600jtan"
+            target="_blank"
             class="btn btn-wa"
             ><i class="fa-brands fa-whatsapp"></i> Chat WhatsApp Sekarang</a
           >
@@ -1787,19 +1790,13 @@
           >
         </div>
 
-        <form
-          class="form-card"
-          id="form"
-          onsubmit="
-            event.preventDefault();
-            this.querySelector('button').innerHTML =
-              '<i class=\'fa-solid fa-check\'></i> Terkirim — kami hubungi segera';
-          "
-        >
+        <form class="form-card" id="form">
           <h4>Konsultasi Gratis dengan Marketing Resmi</h4>
-          <input type="text" placeholder="Nama lengkap" required />
-          <input type="tel" placeholder="No. WhatsApp aktif" required />
-          <input type="email" placeholder="Email" />
+
+          <input type="text" id="nama" placeholder="Nama lengkap" required />
+          <input type="tel" id="wa" placeholder="No. WhatsApp aktif" required />
+          <input type="email" id="email" placeholder="Email" />
+
           <button type="submit" class="btn btn-primary">
             <i class="fa-solid fa-paper-plane"></i> Kirim & Klaim Best Deal
           </button>
@@ -1837,7 +1834,7 @@
           <div>
             <h5>Kontak</h5>
             <ul>
-              <li><i class="fa-solid fa-phone"></i> +62 812 0000 0000</li>
+              <li><i class="fa-solid fa-phone"></i> +62 811 995 0205</li>
               <li><i class="fa-solid fa-envelope"></i> sales@sakuragc.id</li>
               <li>
                 <i class="fa-solid fa-location-dot"></i> Cipayung, Jakarta Timur
@@ -1860,11 +1857,49 @@
       </div>
     </footer>
 
-    <a href="https://wa.me/6281200000000" class="wa-float" aria-label="WhatsApp"
+    <a
+      href="https://wa.me/628119950205?text=Halo,saya%20tertarik%20unit%20Studio%20SGC%20600jtan"
+      target="_blank"
+      class="wa-float"
+      aria-label="WhatsApp"
       ><i class="fa-brands fa-whatsapp"></i
     ></a>
 
     <script>
+      document.getElementById('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Ambil data
+        const nama = document.getElementById('nama').value;
+        const wa = document.getElementById('wa').value;
+        const email = document.getElementById('email').value;
+
+        // Format pesan
+        const pesan = `
+Halo, saya tertarik unit Studio SGC 600jtan.
+
+Berikut data saya:
+Nama: ${nama}
+No WA: ${wa}
+Email: ${email}
+
+Mohon info detail & promo terbaik hari ini ya.
+`;
+
+        // Encode URL
+        const encoded = encodeURIComponent(pesan);
+
+        // Nomor tujuan
+        const tujuan = '628119950205';
+
+        // Redirect ke WhatsApp
+        window.open(`https://wa.me/${tujuan}?text=${encoded}`, '_blank');
+
+        // Optional: ubah tombol setelah submit
+        this.querySelector('button').innerHTML =
+          '<i class="fa-solid fa-check"></i> Dialihkan ke WhatsApp...';
+      });
+
       // GALLERY DATA
       const GAL = [
         {
