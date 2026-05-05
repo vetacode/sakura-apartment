@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sakura Garden City — Hunian TOD Premium di Jakarta Timur</title>
+    <meta
+      name="description"
+      content="Sakura Garden City: apartemen Transit Oriented Development di Jakarta Timur. Akses LRT & Tol, fasilitas premium, potensi capital gain tinggi."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg: #fbf9f6;
+        --ink: #1a1a1a;
+        --muted: #6b6b6b;
+        --line: #ececec;
+        --sakura: #e8a4b8;
+        --sakura-soft: #f7e3e9;
+        --accent: #1f2937;
+        --gold: #b88a4a;
+        --radius: 14px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      .jp {
+        font-family: 'Noto Serif JP', serif;
+      }
+      .container {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* NAV */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(251, 249, 246, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 68px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+      .logo .mark {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, #fff, var(--sakura));
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-size: 14px;
+      }
+      .nav ul {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+      .nav ul a {
+        font-size: 14px;
+        color: var(--muted);
+        transition: color 0.2s;
+      }
+      .nav ul a:hover {
+        color: var(--ink);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 20px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 14px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          background 0.2s;
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        background: #000;
+      }
+      .btn-ghost {
+        background: transparent;
+        border-color: var(--line);
+        color: var(--ink);
+      }
+      .btn-wa {
+        background: #25d366;
+        color: #fff;
+      }
+      .btn-wa:hover {
+        background: #1ebe5a;
+      }
+
+      @media (max-width: 760px) {
+        .nav ul {
+          display: none;
+        }
+      }
+
+      /* HERO */
+      .hero {
+        padding: 72px 0 90px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: var(--sakura-soft);
+        color: #9b3a55;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: clamp(38px, 5.2vw, 62px);
+        line-height: 1.05;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 18px 0 20px;
+      }
+      h1 .accent {
+        color: var(--sakura);
+        font-style: italic;
+        font-weight: 700;
+      }
+      .lead {
+        font-size: 18px;
+        color: var(--muted);
+        max-width: 540px;
+        margin-bottom: 32px;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 36px;
+      }
+      .hero-stats {
+        display: flex;
+        gap: 36px;
+        border-top: 1px solid var(--line);
+        padding-top: 24px;
+      }
+      .hero-stats .s strong {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .hero-stats .s span {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .hero-visual {
+        position: relative;
+        aspect-ratio: 4/5;
+        border-radius: 24px;
+        overflow: hidden;
+        background: linear-gradient(160deg, #dfe7e3, #f0d8df);
+      }
+      .hero-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-badge {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(8px);
+        border-radius: 14px;
+        padding: 16px 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .hero-badge small {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .hero-badge b {
+        font-size: 18px;
+      }
+      .floating-petal {
+        position: absolute;
+        color: var(--sakura);
+        opacity: 0.5;
+        font-size: 22px;
+      }
+
+      @media (max-width: 880px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .hero-stats {
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+      }
+
+      /* SECTION COMMON */
+      section {
+        padding: 90px 0;
+      }
+      .sec-head {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 56px;
+      }
+      .sec-head .eyebrow {
+        margin-bottom: 14px;
+      }
+      .sec-head h2 {
+        font-size: clamp(30px, 3.6vw, 44px);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+      }
+      .sec-head p {
+        color: var(--muted);
+        margin-top: 14px;
+      }
+
+      /* VALUE */
+      .value-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .v-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px;
+        transition:
+          border-color 0.25s,
+          transform 0.25s;
+      }
+      .v-card:hover {
+        border-color: var(--sakura);
+        transform: translateY(-3px);
+      }
+      .v-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        background: var(--sakura-soft);
+        color: #9b3a55;
+        display: grid;
+        place-items: center;
+        margin-bottom: 18px;
+        font-size: 18px;
+      }
+      .v-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      .v-card p {
+        color: var(--muted);
+        font-size: 14.5px;
+      }
+      @media (max-width: 880px) {
+        .value-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* INVESTMENT */
+      .invest {
+        background: var(--ink);
+        color: #fff;
+        border-radius: 24px;
+        padding: 64px 48px;
+        margin: 0 24px;
+      }
+      .invest-wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .invest h2 {
+        font-size: clamp(28px, 3.4vw, 40px);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+      }
+      .invest p {
+        color: #bfbfbf;
+        margin-bottom: 28px;
+      }
+      .stat-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .stat {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        padding: 22px;
+      }
+      .stat .num {
+        font-size: 34px;
+        font-weight: 800;
+        color: var(--sakura);
+      }
+      .stat .lbl {
+        font-size: 13px;
+        color: #bfbfbf;
+        margin-top: 6px;
+      }
+      @media (max-width: 880px) {
+        .invest {
+          padding: 44px 28px;
+        }
+        .invest-wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* UNITS */
+      .units-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .unit {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+      .unit:hover {
+        transform: translateY(-4px);
+      }
+      .unit-img {
+        aspect-ratio: 4/3;
+        background: linear-gradient(135deg, #eef2ee, #f5e3e9);
+        position: relative;
+        overflow: hidden;
+      }
+      .unit-img i {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font-size: 46px;
+        color: #c8b6bd;
+      }
+      .unit-body {
+        padding: 22px;
+      }
+      .unit-body .tag {
+        font-size: 12px;
+        color: var(--sakura);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .unit-body h3 {
+        margin: 6px 0 10px;
+        font-size: 20px;
+      }
+      .unit-meta {
+        display: flex;
+        gap: 16px;
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 14px;
+      }
+      .unit-meta span i {
+        margin-right: 5px;
+        color: var(--ink);
+      }
+      .price {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .price small {
+        color: var(--muted);
+        font-weight: 500;
+        font-size: 12px;
+        display: block;
+      }
+      @media (max-width: 880px) {
+        .units-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* TRUST */
+      .trust-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .partners {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 24px;
+      }
+      .partner {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 18px;
+        text-align: center;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 13px;
+        background: #fff;
+      }
+      .progress-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px;
+      }
+      .progress-row {
+        margin-bottom: 18px;
+      }
+      .progress-row:last-child {
+        margin-bottom: 0;
+      }
+      .progress-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .progress-bar {
+        height: 8px;
+        background: var(--sakura-soft);
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .progress-bar div {
+        height: 100%;
+        background: var(--sakura);
+        border-radius: 99px;
+      }
+      .legal {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 22px;
+      }
+      .legal span {
+        font-size: 12px;
+        background: #f3efe9;
+        color: #7a5c2f;
+        padding: 6px 12px;
+        border-radius: 99px;
+        font-weight: 600;
+      }
+      @media (max-width: 880px) {
+        .trust-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* FINAL CTA */
+      .final {
+        background: linear-gradient(135deg, var(--sakura-soft), #fff);
+        border-radius: 24px;
+        margin: 0 24px;
+        padding: 72px 32px;
+        text-align: center;
+        border: 1px solid var(--line);
+      }
+      .final h2 {
+        font-size: clamp(30px, 4vw, 46px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        max-width: 720px;
+        margin: 0 auto 14px;
+      }
+      .final p {
+        color: var(--muted);
+        max-width: 520px;
+        margin: 0 auto 28px;
+      }
+      .final .ctas {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* FORM */
+      .form-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px;
+        max-width: 420px;
+        margin: 32px auto 0;
+        text-align: left;
+      }
+      .form-card h4 {
+        font-size: 16px;
+        margin-bottom: 14px;
+      }
+      .form-card input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 14px;
+        margin-bottom: 10px;
+        background: #fafafa;
+      }
+      .form-card input:focus {
+        outline: none;
+        border-color: var(--sakura);
+        background: #fff;
+      }
+      .form-card button {
+        width: 100%;
+        justify-content: center;
+        margin-top: 6px;
+      }
+
+      /* FOOTER */
+      footer {
+        padding: 60px 0 32px;
+        border-top: 1px solid var(--line);
+        margin-top: 80px;
+      }
+      .foot {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 36px;
+      }
+      .foot p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 10px;
+        max-width: 280px;
+      }
+      .foot h5 {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .foot ul {
+        list-style: none;
+      }
+      .foot li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .foot li a:hover {
+        color: var(--ink);
+      }
+      .copyright {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .socials {
+        display: flex;
+        gap: 14px;
+      }
+      .socials a {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        display: grid;
+        place-items: center;
+        transition: all 0.2s;
+      }
+      .socials a:hover {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+      }
+      @media (max-width: 760px) {
+        .foot {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* WA FLOAT */
+      .wa-float {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 60;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25d366;
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 26px;
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+        animation: pulse 2.4s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.06);
+        }
+      }
+
+      /* Reveal */
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      [data-reveal].in {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="#" class="logo">
+          <span class="mark"><i class="fa-solid fa-fan"></i></span>
+          <span
+            >SAKURA
+            <span class="jp" style="color: var(--sakura)">桜</span> GARDEN
+            CITY</span
+          >
+        </a>
+        <ul>
+          <li><a href="#value">Keunggulan</a></li>
+          <li><a href="#invest">Investasi</a></li>
+          <li><a href="#units">Unit</a></li>
+          <li><a href="#trust">Legalitas</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary"
+          ><i class="fa-solid fa-calendar-check"></i> Jadwalkan Tur</a
+        >
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div data-reveal>
+          <span class="eyebrow"
+            ><i class="fa-solid fa-location-dot"></i> Jakarta Timur · TOD
+            LRT</span
+          >
+          <h1>
+            Hunian <span class="accent jp">桜</span> Modern di Jantung
+            <br />Jakarta Timur yang <span class="accent">Berkembang</span>.
+          </h1>
+          <p class="lead">
+            Sakura Garden City menghadirkan apartemen konsep
+            <b>Transit Oriented Development</b> — terintegrasi langsung dengan
+            stasiun LRT, akses tol Becakayu, dan fasilitas gaya hidup premium
+            bergaya Jepang modern.
+          </p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary"
+              ><i class="fa-solid fa-bolt"></i> Dapatkan Promo NUP</a
+            >
+            <a href="https://wa.me/6281200000000" class="btn btn-ghost"
+              ><i class="fa-brands fa-whatsapp"></i> Chat via WhatsApp</a
+            >
+          </div>
+          <div class="hero-stats">
+            <div class="s">
+              <strong>0 m</strong><span>Akses ke Stasiun LRT</span>
+            </div>
+            <div class="s">
+              <strong>15%+</strong><span>Capital Gain p.a.</span>
+            </div>
+            <div class="s">
+              <strong>5 ★</strong><span>Developer Award</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <img
+            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"
+            alt="Sakura Garden City Apartment Tower"
+          />
+          <i
+            class="fa-solid fa-fan floating-petal"
+            style="top: 8%; left: 10%; animation: pulse 4s infinite"
+          ></i>
+          <i
+            class="fa-solid fa-fan floating-petal"
+            style="
+              top: 30%;
+              right: 14%;
+              font-size: 16px;
+              animation: pulse 5s infinite;
+            "
+          ></i>
+          <div class="hero-badge">
+            <div>
+              <small>Mulai dari</small>
+              <b>Rp 480 Juta*</b>
+            </div>
+            <a
+              href="#units"
+              class="btn btn-primary"
+              style="padding: 9px 16px; font-size: 13px"
+              >Lihat Unit <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUE -->
+    <section id="value">
+      <div class="container">
+        <div class="sec-head" data-reveal>
+          <span class="eyebrow">The Why</span>
+          <h2>Lokasi yang Mengubah <br />Cara Anda Hidup di Jakarta.</h2>
+          <p>
+            Tiga keunggulan inti yang membuat Sakura Garden City menjadi pilihan
+            tepat untuk hunian dan investasi jangka panjang.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <div class="v-card" data-reveal>
+            <div class="v-icon"><i class="fa-solid fa-train-subway"></i></div>
+            <h3>Transit Oriented Development</h3>
+            <p>
+              Akses langsung ke Stasiun LRT Jatibening Baru. Cukup berjalan kaki
+              dari lobby ke kereta — bebas macet ke pusat kota.
+            </p>
+          </div>
+          <div class="v-card" data-reveal>
+            <div class="v-icon"><i class="fa-solid fa-road"></i></div>
+            <h3>Akses 3 Tol Strategis</h3>
+            <p>
+              Terhubung Tol Becakayu, JORR, dan Tol Jakarta–Cikampek. Sentuhan
+              jarak ke Bekasi, Cawang, hingga Sudirman dalam 20 menit.
+            </p>
+          </div>
+          <div class="v-card" data-reveal>
+            <div class="v-icon"><i class="fa-solid fa-spa"></i></div>
+            <h3>Fasilitas Bergaya Jepang</h3>
+            <p>
+              Onsen-style pool, zen garden, sky lounge, co-working space, gym,
+              dan jogging track sepanjang 400m di rooftop.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTMENT -->
+    <section id="invest" style="padding: 40px 0">
+      <div class="invest" data-reveal>
+        <div class="invest-wrap">
+          <div>
+            <span
+              class="eyebrow"
+              style="
+                background: rgba(232, 164, 184, 0.15);
+                color: var(--sakura);
+              "
+              >Investment Highlight</span
+            >
+            <h2 style="margin-top: 14px">
+              Jakarta Timur: <br />Episentrum Pertumbuhan Properti 2026.
+            </h2>
+            <p>
+              Berdasarkan riset pasar Colliers & Knight Frank, kawasan Jakarta
+              Timur mencatat pertumbuhan harga properti tertinggi di Jabodetabek
+              dalam 3 tahun terakhir, didorong infrastruktur LRT dan
+              pengembangan TOD.
+            </p>
+            <a href="#contact" class="btn btn-primary"
+              ><i class="fa-solid fa-file-lines"></i> Minta Investment Brief</a
+            >
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="num">+18%</div>
+              <div class="lbl">Capital Gain rata-rata 3 tahun</div>
+            </div>
+            <div class="stat">
+              <div class="num">7-9%</div>
+              <div class="lbl">Estimasi Rental Yield p.a.</div>
+            </div>
+            <div class="stat">
+              <div class="num">95%</div>
+              <div class="lbl">Okupansi area TOD eksisting</div>
+            </div>
+            <div class="stat">
+              <div class="num">#1</div>
+              <div class="lbl">Wilayah pertumbuhan tercepat</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNITS -->
+    <section id="units">
+      <div class="container">
+        <div class="sec-head" data-reveal>
+          <span class="eyebrow">Pilihan Unit</span>
+          <h2>Didesain untuk Gaya Hidup <br />Pasangan Muda Urban.</h2>
+          <p>
+            Layout efisien, pencahayaan alami maksimal, dan furnish-ready.
+            Tinggal pindah, mulai bab baru.
+          </p>
+        </div>
+
+        <div class="units-grid">
+          <div class="unit" data-reveal>
+            <div class="unit-img"><i class="fa-solid fa-bed"></i></div>
+            <div class="unit-body">
+              <span class="tag">Best for Investor</span>
+              <h3>Studio · Sakura Type</h3>
+              <div class="unit-meta">
+                <span><i class="fa-solid fa-ruler-combined"></i> 22 m²</span>
+                <span><i class="fa-solid fa-bath"></i> 1 Bath</span>
+              </div>
+              <div class="price">
+                Rp 480 Juta<small>Cicilan mulai 3 jt/bln*</small>
+              </div>
+            </div>
+          </div>
+          <div class="unit" data-reveal>
+            <div
+              class="unit-img"
+              style="background: linear-gradient(135deg, #f5e3e9, #eef2ee)"
+            >
+              <i class="fa-solid fa-couch"></i>
+            </div>
+            <div class="unit-body">
+              <span class="tag">Most Popular</span>
+              <h3>1 Bedroom · Hanami</h3>
+              <div class="unit-meta">
+                <span><i class="fa-solid fa-ruler-combined"></i> 33 m²</span>
+                <span><i class="fa-solid fa-bath"></i> 1 Bath</span>
+                <span><i class="fa-solid fa-bed"></i> 1 BR</span>
+              </div>
+              <div class="price">
+                Rp 720 Juta<small>Cicilan mulai 4.5 jt/bln*</small>
+              </div>
+            </div>
+          </div>
+          <div class="unit" data-reveal>
+            <div
+              class="unit-img"
+              style="background: linear-gradient(135deg, #eaeae0, #f7e3e9)"
+            >
+              <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="unit-body">
+              <span class="tag">Family Choice</span>
+              <h3>2 Bedroom · Zen</h3>
+              <div class="unit-meta">
+                <span><i class="fa-solid fa-ruler-combined"></i> 48 m²</span>
+                <span><i class="fa-solid fa-bath"></i> 2 Bath</span>
+                <span><i class="fa-solid fa-bed"></i> 2 BR</span>
+              </div>
+              <div class="price">
+                Rp 1.05 M<small>Cicilan mulai 6.8 jt/bln*</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section id="trust" style="background: #f4f1ec">
+      <div class="container">
+        <div class="trust-grid">
+          <div data-reveal>
+            <span class="eyebrow">Trust & Legalitas</span>
+            <h2
+              style="font-size: clamp(28px, 3.4vw, 40px); margin: 14px 0 14px"
+            >
+              Dipercaya Brand & Institusi Terkemuka.
+            </h2>
+            <p style="color: var(--muted)">
+              Dikembangkan oleh konsorsium developer berpengalaman dengan track
+              record lebih dari 30 proyek properti di Indonesia & Jepang.
+            </p>
+            <div class="legal">
+              <span><i class="fa-solid fa-shield-halved"></i> SHM-SRS</span>
+              <span><i class="fa-solid fa-certificate"></i> IMB Lengkap</span>
+              <span
+                ><i class="fa-solid fa-building-columns"></i> KPR 12 Bank</span
+              >
+              <span
+                ><i class="fa-solid fa-handshake"></i> Joint Venture JP</span
+              >
+            </div>
+            <div class="partners">
+              <div class="partner">MITSUI</div>
+              <div class="partner">BCA KPR</div>
+              <div class="partner">MANDIRI</div>
+              <div class="partner">BNI</div>
+              <div class="partner">COLLIERS</div>
+              <div class="partner">REI</div>
+            </div>
+          </div>
+          <div class="progress-card" data-reveal>
+            <h3 style="font-size: 18px; margin-bottom: 18px">
+              <i
+                class="fa-solid fa-helmet-safety"
+                style="color: var(--sakura)"
+              ></i>
+              Progres Pembangunan
+            </h3>
+            <div class="progress-row">
+              <div class="progress-label">
+                <span>Tower A — Sakura</span><b>82%</b>
+              </div>
+              <div class="progress-bar"><div style="width: 82%"></div></div>
+            </div>
+            <div class="progress-row">
+              <div class="progress-label">
+                <span>Tower B — Hanami</span><b>64%</b>
+              </div>
+              <div class="progress-bar"><div style="width: 64%"></div></div>
+            </div>
+            <div class="progress-row">
+              <div class="progress-label">
+                <span>Fasilitas & Landscape</span><b>48%</b>
+              </div>
+              <div class="progress-bar"><div style="width: 48%"></div></div>
+            </div>
+            <div class="progress-row">
+              <div class="progress-label">
+                <span>Jembatan akses LRT</span><b>91%</b>
+              </div>
+              <div class="progress-bar"><div style="width: 91%"></div></div>
+            </div>
+            <p style="font-size: 13px; color: var(--muted); margin-top: 18px">
+              <i class="fa-solid fa-circle-info"></i> Serah terima Tower A: Q4
+              2026.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="contact" style="padding: 40px 0">
+      <div class="final" data-reveal>
+        <span class="eyebrow">Limited Promo NUP</span>
+        <h2>
+          Amankan Unit Terbaik Anda Hari Ini — <br />Sebelum Harga Naik di 2026.
+        </h2>
+        <p>
+          Hanya 50 unit pertama mendapat diskon NUP, free AC, smart-lock, dan
+          biaya AJB.
+        </p>
+        <div class="ctas">
+          <a href="https://wa.me/6281200000000" class="btn btn-wa"
+            ><i class="fa-brands fa-whatsapp"></i> Chat WhatsApp Sekarang</a
+          >
+          <a href="#form" class="btn btn-primary"
+            ><i class="fa-solid fa-pen-to-square"></i> Isi Form Konsultasi</a
+          >
+        </div>
+
+        <form
+          class="form-card"
+          id="form"
+          onsubmit="
+            event.preventDefault();
+            this.querySelector('button').innerHTML =
+              '<i class=\'fa-solid fa-check\'></i> Terkirim — kami hubungi segera';
+          "
+        >
+          <h4>Konsultasi Gratis dengan Marketing Resmi</h4>
+          <input type="text" placeholder="Nama lengkap" required />
+          <input type="tel" placeholder="No. WhatsApp aktif" required />
+          <input type="email" placeholder="Email" />
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Kirim & Dapatkan E-Brochure
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="foot">
+          <div>
+            <div class="logo">
+              <span class="mark"><i class="fa-solid fa-fan"></i></span
+              ><span
+                >SAKURA
+                <span class="jp" style="color: var(--sakura)">桜</span> GARDEN
+                CITY</span
+              >
+            </div>
+            <p>
+              Hunian TOD premium di Jakarta Timur. Hidup tenang ala Jepang,
+              terhubung penuh dengan denyut Jakarta.
+            </p>
+          </div>
+          <div>
+            <h5>Proyek</h5>
+            <ul>
+              <li><a href="#value">Keunggulan</a></li>
+              <li><a href="#units">Tipe Unit</a></li>
+              <li><a href="#trust">Progres</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Kontak</h5>
+            <ul>
+              <li><i class="fa-solid fa-phone"></i> +62 812 0000 0000</li>
+              <li><i class="fa-solid fa-envelope"></i> sales@sakuragc.id</li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i> Jl. Raya Kalimalang,
+                Jaktim
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5>Ikuti</h5>
+            <div class="socials">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <span>© 2026 Sakura Garden City. PT Sakura Properti Indonesia.</span>
+          <span>Privacy · Terms · Disclaimer</span>
+        </div>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/6281200000000" class="wa-float" aria-label="WhatsApp"
+      ><i class="fa-brands fa-whatsapp"></i
+    ></a>
+
+    <script type="module">
+      import {
+        animate,
+        inView,
+        stagger,
+      } from 'https://cdn.jsdelivr.net/npm/framer-motion@11.0.8/+esm';
+
+      // Reveal on scroll using framer-motion's inView
+      const items = document.querySelectorAll('[data-reveal]');
+      items.forEach((el) => {
+        inView(
+          el,
+          () => {
+            animate(
+              el,
+              {
+                opacity: [0, 1],
+                transform: ['translateY(28px)', 'translateY(0)'],
+              },
+              { duration: 0.8, easing: [0.22, 1, 0.36, 1] }
+            );
+            el.classList.add('in');
+            return () => {};
+          },
+          { amount: 0.2 }
+        );
+      });
+
+      // Hero stats counter pop
+      animate(
+        '.hero-stats .s',
+        { opacity: [0, 1], transform: ['translateY(10px)', 'translateY(0)'] },
+        { delay: stagger(0.12, { start: 0.4 }), duration: 0.6 }
+      );
+
+      // Smooth nav highlight (simple)
+      const navLinks = document.querySelectorAll('.nav ul a');
+      navLinks.forEach((a) =>
+        a.addEventListener('mouseenter', () =>
+          animate(
+            a,
+            { transform: ['translateY(0)', 'translateY(-2px)'] },
+            { duration: 0.2 }
+          )
+        )
+      );
+    </script>
+  </body>
+</html>
